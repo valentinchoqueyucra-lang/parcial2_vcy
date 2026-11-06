@@ -21,7 +21,7 @@ const recintosFiltrados = computed(() => {
     (recinto) =>
       recinto.nombre.toLowerCase().includes(busqueda.value.toLowerCase()) ||
       recinto.ciudad.toLowerCase().includes(busqueda.value.toLowerCase()) ||
-      recinto.anforo_maximo.toString().includes(busqueda.value),
+      recinto.aforo_maximo.toString().includes(busqueda.value),
   )
 })
 
@@ -58,7 +58,7 @@ defineExpose({ obtenerLista })
           <th>Nº</th>
           <th>Nombre</th>
           <th>Ciudad</th>
-          <th>Anforo Máximo</th>
+          <th>Aforo Máximo</th>
           <th>Acciones</th>
         </tr>
       </thead>
@@ -67,7 +67,7 @@ defineExpose({ obtenerLista })
           <td>{{ index + 1 }}</td>
           <td>{{ recinto.nombre }}</td>
           <td>{{ recinto.ciudad }}</td>
-          <td>{{ recinto.anforo_maximo }}</td>
+          <td>{{ recinto.aforo_maximo }}</td>
           <td>
             <Button icon="pi pi-pencil" aria-label="Editar" text @click="emitirEdicion(recinto)" />
             <Button

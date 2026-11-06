@@ -1,6 +1,7 @@
 import type { Recinto } from './recinto'
 
 export type EstadoEvento = 'Programado' | 'Agotado' | 'Cancelado'
+export type ModalidadIngreso = 'Entrada Pagada' | 'Entrada Gratuita' | 'Pase Invitacion'
 export interface EventosCulturales {
   id: number
   id_recinto: number
@@ -11,4 +12,5 @@ export interface EventosCulturales {
   precio_entrada: number
   fecha_evento: Date
   estado: EstadoEvento
+  modalidad_ingreso: ModalidadIngreso
 }

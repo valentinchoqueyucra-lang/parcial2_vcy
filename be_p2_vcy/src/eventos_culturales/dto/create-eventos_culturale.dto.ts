@@ -70,4 +70,12 @@ export class CreateEventosCulturaleDto {
   @ApiProperty()
   @IsNotEmpty({ message: 'La fecha del evento es obligatoria' })
   readonly fecha_evento: Date;
+
+   @ApiProperty({
+    enum: ['Entrada Pagada', 'Entrada Gratuita', 'Pase Invitacion'],
+    example: 'Entrada Pagada',
+  })
+  @IsNotEmpty({ message: 'La modalidad de ingreso es obligatoria' })
+  @IsString({ message: 'La modalidad de ingreso debe ser de tipo cadena' })
+  readonly modalidad_ingreso: string;
 }

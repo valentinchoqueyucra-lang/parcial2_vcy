@@ -31,8 +31,8 @@ export class CreateRecintoDto {
 
   @ApiProperty({ required: false, nullable: true })
   @IsOptional()
-  @IsInt({ message: 'El anforo máximo debe ser un número entero' })
-  @Min(0, { message: 'El anforo máximo debe ser un número positivo' })
-  @Max(9999, { message: 'El anforo máximo no puede superar los 9999' })
-  readonly anforo_maximo: number | null;
+  @IsInt({ message: 'El aforo máximo debe ser un número entero' })
+  @Min(0, { message: 'El aforo máximo debe ser un número positivo' })
+  @Max(9999, { message: 'El aforo máximo no puede superar los 9999' })
+  readonly aforoMaximo: number | null;
 }

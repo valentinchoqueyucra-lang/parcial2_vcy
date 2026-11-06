@@ -35,7 +35,7 @@ async function handleSave() {
     const body = {
       nombre: recinto.value.nombre,
       ciudad: recinto.value.ciudad,
-      anforo_maximo: Number(recinto.value.anforo_maximo),
+      aforo_maximo: Number(recinto.value.aforo_maximo),
     }
     if (props.modoEdicion) {
       await http.patch(`${ENDPOINT}/${recinto.value.id}`, body)
@@ -73,10 +73,10 @@ async function handleSave() {
         <InputText id="ciudad" v-model="recinto.ciudad" class="flex-auto" autocomplete="off" />
       </div>
       <div class="flex items-center gap-4 mb-4">
-        <label for="anforo_maximo" class="font-semibold w-3">Anforo Máximo</label>
+        <label for="aforo_maximo" class="font-semibold w-3">Aforo Máximo</label>
         <InputNumber
-          id="anforo_maximo"
-          v-model="recinto.anforo_maximo"
+          id="aforo_maximo"
+          v-model="recinto.aforo_maximo"
           :min="1"
           :max="9999"
           class="flex-auto"

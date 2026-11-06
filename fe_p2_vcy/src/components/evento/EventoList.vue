@@ -63,6 +63,7 @@ defineExpose({ obtenerLista })
           <th>Precio de Entrada</th>
           <th>Fecha del Evento</th>
           <th>Estado</th>
+          <th>Modalidad Ingreso</th>
           <th>Acciones</th>
         </tr>
       </thead>
@@ -76,6 +77,8 @@ defineExpose({ obtenerLista })
           <td>{{ evento.precio_entrada }}</td>
           <td>{{ evento.fecha_evento }}</td>
           <td>{{ evento.estado }}</td>
+          <td>{{ evento.modalidad_ingreso }}</td>
+
           <td>
             <Button icon="pi pi-pencil" aria-label="Editar" text @click="emitirEdicion(evento)" />
             <Button

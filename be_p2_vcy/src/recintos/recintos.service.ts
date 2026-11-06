@@ -2,7 +2,7 @@ import { ConflictException, Injectable, NotFoundException } from '@nestjs/common
 import { CreateRecintoDto } from './dto/create-recinto.dto';
 import { UpdateRecintoDto } from './dto/update-recinto.dto';
 import { InjectRepository } from '@nestjs/typeorm';
-import { Repository } from 'typeorm';
+import { IsNull, Repository } from 'typeorm';
 import { Recinto } from './entities/recinto.entity';
 
 @Injectable()
@@ -15,6 +15,7 @@ export class RecintosService {
   async create(createRecintoDto: CreateRecintoDto): Promise<Recinto> {
     let recinto = await this.recintoRepository.findOneBy({
       nombre: createRecintoDto.nombre,
+      aforoMaximo: createRecintoDto.aforoMaximo ?? IsNull(),
     });
     if (recinto) throw new ConflictException('El recinto ya existe');
 

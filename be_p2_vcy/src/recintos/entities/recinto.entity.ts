@@ -20,8 +20,8 @@ export class Recinto {
   @Column({ type: 'varchar', length: 50, nullable: false })
   ciudad: string;
 
-  @Column({ type: 'int', nullable: true })
-  anforo_maximo: number;
+  @Column({ type: 'int', nullable: true, name: 'aforo_maximo' })
+  aforoMaximo: number;
 
   @CreateDateColumn({ name: 'fecha_creacion' })
   fechaCreacion: Date;

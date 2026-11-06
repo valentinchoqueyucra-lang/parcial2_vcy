@@ -14,6 +14,12 @@ const estadosEvento = [
   { label: 'Cancelado', value: 'Cancelado' },
 ]
 
+const modalidadesEvento = [
+  { label: 'Entrada Pagada', value: 'Entrada Pagada' },
+  { label: 'Entrada Gratutita', value: 'Entrada Gratutita' },
+  { label: 'Pase Invitacion', value: 'Pase Invitacion' },
+]
+
 const recintos = ref<Recinto[]>([])
 
 async function obtenerRecintos() {
@@ -64,6 +70,7 @@ async function handleSave() {
       precio_entrada: Number(evento.value.precio_entrada),
       fecha_evento: evento.value.fecha_evento,
       estado: evento.value.estado,
+      modalidad_ingreso: evento.value.modalidad_ingreso,
     }
     if (props.modoEdicion) {
       console.log('ID del evento:', evento.value.id)
@@ -92,7 +99,7 @@ async function handleSave() {
       style="width: 50rem"
     >
       <div class="flex items-center gap-4 mb-4">
-        <label for="titulo" class="font-semibold w-3">Titulo</label>
+        <label for="Titulo" class="font-semibold w-3">Titulo</label>
         <InputText
           id="titulo"
           v-model="evento.titulo"
@@ -165,6 +172,18 @@ async function handleSave() {
           optionLabel="label"
           optionValue="value"
           placeholder="Seleccione un estado"
+          class="flex-auto"
+        />
+      </div>
+      <div class="flex items-center gap-4 mb-4">
+        <label for="modalidad_ingeso" class="font-semibold w-3">Modalidad Ingreso</label>
+        <Select
+          id="modalidad_ingreso"
+          v-model="evento.modalidad_ingreso"
+          :options="modalidadesEvento"
+          optionLabel="label"
+          optionValue="value"
+          placeholder="Seleccione una modalidad"
           class="flex-auto"
         />
       </div>
